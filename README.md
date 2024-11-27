@@ -1,7 +1,7 @@
 # Fila Virtual Prioritária - AED1 2024
 
-Este projeto implementa uma **fila virtual** para o atendimento online de um banco, com foco em priorizar **idosos**. Foi desenvolvido como parte do **Trabalho Prático 3** da disciplina de **Algoritmos e Estruturas de Dados 1**, ministrado pelo Professor **Juan Collona**.  
-A solução utiliza uma **lista duplamente encadeada**, com ordenação por **bubble sort**, para organizar a fila de forma dinâmica e eficiente.
+Este projeto implementa uma **fila virtual** para atendimento online em um banco, com o objetivo de oferecer **prioridade especial** para idosos. Ele foi desenvolvido como parte do **Trabalho Prático 3** do programa de estudos da disciplina **Algoritmos e Estruturas de Dados 1**, ministrada pelo **Professor Juan Collona**.
+Uma lista duplamente encadeada foi utilizada para implementar a solução, juntamente com o bubble sort para organizar dinamicamente e de forma eficiente a fila.
 
 ---
 
