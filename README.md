@@ -1,46 +1,34 @@
-# Fila Virtual Prioritária - AED1 2024
+# Fila Virtual Prioritária
 
-Este projeto implementa uma **fila virtual** para atendimento online em um banco, com o objetivo de oferecer **prioridade especial** para idosos. Ele foi desenvolvido como parte do **Trabalho Prático 3** do programa de estudos da disciplina **Algoritmos e Estruturas de Dados 1**, ministrada pelo **Professor Juan Collona**.
-Uma lista duplamente encadeada foi utilizada para implementar a solução, juntamente com o bubble sort para organizar dinamicamente e de forma eficiente a fila.
-
----
-
-## 🔧 **Funcionalidades**
-
-- **Inserção de clientes na fila**  
-  Os clientes são adicionados no final da fila, conforme o conceito FIFO.
-
-- **Ordenação por prioridade**  
-  Após a inserção, a fila é reorganizada, colocando os clientes mais velhos no início, com base em suas idades.
-
-- **Atendimento sequencial**  
-  Os clientes são atendidos (removidos) do início da fila, e suas idades são exibidas no terminal.
+Este projeto implementa um sistema de **Fila Virtual Prioritária** em C, desenvolvido como parte do **Trabalho Prático 3** da disciplina de **Algoritmos e Estruturas de Dados 1 (AED1)**.  
+A fila utiliza uma **lista duplamente encadeada** para gerenciar os clientes, priorizando idosos automaticamente após a inserção.
 
 ---
 
-## 📁 **Estrutura do Código**
+## 🚀 **Funcionalidades**
 
-- **`fila.h`**  
-  Declaração das funções da TAD (**Tipo Abstrato de Dados**).
+- **Inserção de Clientes**  
+  Adiciona um novo cliente ao final da fila (conforme o conceito FIFO).  
 
-- **`fila.c`**  
-  Implementação das funções da TAD, como inserção, remoção e ordenação da fila.
+- **Prioridade por Idade**  
+  Reorganiza automaticamente a fila para colocar os clientes mais velhos no início.  
 
-- **`samuel_eliezer.c`**  
-  Arquivo principal que utiliza a TAD para simular o sistema de atendimento.
-
----
-
-## 🛠 **Tecnologias Usadas**
-
-- **Linguagem:** C  
-- **Algoritmo de ordenação:** Bubble Sort  
-- **Estrutura de Dados:** Lista Duplamente Encadeada  
+- **Atendimento**  
+  Remove o cliente mais prioritário da fila e exibe sua idade no terminal.  
 
 ---
 
-## 📚 **Como Executar**
+## 📂 **Estrutura do Projeto**
 
-1. Clone o repositório:  
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+- **`fila.h`**: Declaração das funções e estruturas de dados utilizadas na fila.  
+- **`fila.c`**: Implementação das funções da TAD (inserção, ordenação, remoção, etc.).  
+- **`main.c`**: Arquivo principal que simula o sistema de atendimento.  
+
+---
+
+## 🛠 **Como Executar**
+
+### 1. Compilação:
+Certifique-se de ter um compilador C instalado. Use o comando:  
+```bash
+gcc main.c fila.c -o fila_virtual
