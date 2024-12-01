@@ -52,24 +52,36 @@ int removeFila(Fila* fila) {
 
 // Ordena a fila em ordem decrescente (maior para menor)
 void ordenaFila(Fila* fila) {
-    if (fila->tamanho < 2) return; // Nada pra ordenar se tiver 0 ou 1 elemento
+    if (fila->tamanho < 2) return; // Nada pra ordenar se houver 0 ou 1 elemento
 
-    int trocou; // Marca se houve troca
+    int trocou;
     do {
-        trocou = 0; // Começa assumindo que tá tudo em ordem
-        No* atual = fila->inicio;
+        trocou = 0; // Assume que a lista está ordenada
+        No* p1 = fila->inicio; // Ponteiro inicial para percorrer a lista
 
-        while (atual && atual->prox) { // Percorre a lista até o penúltimo nó
-            if (atual->idade < atual->prox->idade) { // Se o próximo for maior...
-                // Troca as idades (quem é maior passa pra frente)
-                int temp = atual->idade;
-                atual->idade = atual->prox->idade;
-                atual->prox->idade = temp;
-                trocou = 1; // Marca que teve troca
+        while (p1 && p1->prox) { // Enquanto houver nós para comparar
+            No* p2 = p1->prox; // Ponteiro para o próximo nó
+
+            if (p1->idade < p2->idade) { // Se precisar trocar...
+                // Ajustar os ponteiros para trocar os nós p1 e p2
+                if (p1->ant) p1->ant->prox = p2;
+                else fila->inicio = p2; // Atualiza o início da fila se necessário
+
+                if (p2->prox) p2->prox->ant = p1;
+                else fila->fim = p1; // Atualiza o fim da fila se necessário
+
+                // Troca os ponteiros de p1 e p2
+                p1->prox = p2->prox;
+                p2->ant = p1->ant;
+                p2->prox = p1;
+                p1->ant = p2;
+
+                trocou = 1; // Marca que houve troca
             }
-            atual = atual->prox; // Passa pro próximo nó
+
+            p1 = p2; // Avança para o próximo par
         }
-    } while (trocou); // Repete enquanto houver troca
+    } while (trocou); // Continua enquanto houver trocas
 }
 
 // Libera a memória da fila
